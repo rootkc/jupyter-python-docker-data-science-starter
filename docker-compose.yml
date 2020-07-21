@@ -1,0 +1,10 @@
+version: "3.8"
+services:
+  data_science:
+    build: .
+    volumes:
+      - ./notebooks:/home/jovyan/work
+      - ./project:/home/jovyan/project
+    ports:
+      - 8888:8888
+    command: jupyter notebook --NotebookApp.token=''
